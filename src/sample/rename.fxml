@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="1290.0" fitWidth="334.0" layoutX="-3.0" layoutY="-205.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../../../../Documents/FinishedPhotoshopProjects/Steamprofilepic.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="1087.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea layoutX="-1.0" layoutY="-1.0" prefHeight="1087.0" prefWidth="201.0" />
+            <Button fx:id="infoButton" layoutX="83.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#populateTable" prefHeight="105.0" prefWidth="52.0" text="?">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="1305.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="360.0" right="360.0" />
+         </BorderPane.margin>
+         <children>
+            <Label layoutX="286.0" layoutY="18.0" prefHeight="146.0" prefWidth="341.0" text="WiFi Scanner">
+               <font>
+                  <Font size="59.0" />
+               </font>
+            </Label>
+            <Label fx:id="power" alignment="CENTER" layoutX="457.0" layoutY="134.0" text="Powered by Cyberwerf">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="20.0" layoutY="810.0" prefHeight="51.0" prefWidth="505.0" />
+            <Button fx:id="scanButton" layoutX="546.0" layoutY="810.0" mnemonicParsing="false" onMouseClicked="#handleScanButton" prefHeight="51.0" prefWidth="89.0" text="Scan!" />
+            <TableView fx:id="netwerkenTableView" layoutX="15.0" layoutY="174.0" onKeyPressed="#handleTableViewClick" onMouseClicked="#handleTableViewClick" prefHeight="587.0" prefWidth="628.0" style="-fx-alignment: CENTER;">
+              <columns>
+                  <TableColumn fx:id="fotocolumn" prefWidth="145.333251953125" text="Foto" />
+                <TableColumn fx:id="signaalSterkte" prefWidth="145.333251953125" sortType="DESCENDING" text="Signaalsterkte" />
+                <TableColumn fx:id="netwerkNaam" prefWidth="392.00018310546875" text="Netwerknaam" />
+                  <TableColumn fx:id="netwerkEncryptie" minWidth="0.0" prefWidth="90.0001220703125" text="Encryptie" />
+              </columns>
+            </TableView>
+            <TableView fx:id="imagesTableView" layoutX="51.0" layoutY="866.0" prefHeight="200.0" prefWidth="325.0">
+              <columns>
+                <TableColumn fx:id="imageColumn" prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
